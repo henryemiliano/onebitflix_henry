@@ -1,8 +1,12 @@
 import { Category } from "./Category";
 import { Course } from "./Course";
+import { Episode } from "./Episode";
 
 Category.hasMany(Course);
 
+Course.hasMany(Category);
 Course.belongsTo(Category);
 
-export { Category, Course };
+Episode.belongsTo(Course);
+
+export { Category, Course, Episode };
