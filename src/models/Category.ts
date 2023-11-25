@@ -14,7 +14,7 @@ export interface CategoryInstance
     Category {}
 
 export const Category = sequelize.define<CategoryInstance, Category>(
-  "Category",
+  "Categories",
   {
     id: {
       allowNull: false,
