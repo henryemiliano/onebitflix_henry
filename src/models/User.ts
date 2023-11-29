@@ -21,8 +21,8 @@ export interface UserCreationAttributes extends Optional<User, "id"> {}
 export interface UserInstance
   extends Model<User, UserCreationAttributes>,
     User {
-  Episodes?: EpisodeInstance[];
   checkPassword: (password: string, callbackfn: checkPasswordCallback) => void;
+  Episodes?: EpisodeInstance[];
 }
 
 export const User = sequelize.define<UserInstance, User>(
