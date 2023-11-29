@@ -1,0 +1,6 @@
+
+[4mSequelize CLI [Node: 20.9.0, CLI: 6.4.1, ORM: 6.13.0][24m
+
+Loaded configuration file "config\sequelizeCli.js".
+Using environment "development".
+No migrations were executed, database schema was already up to date.
