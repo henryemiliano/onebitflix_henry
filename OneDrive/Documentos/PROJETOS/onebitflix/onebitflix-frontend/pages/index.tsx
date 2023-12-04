@@ -2,6 +2,7 @@ import Head from "next/head";
 import HeaderNoAuth from "../src/components/homeNoAuth/headerNoAuth/index";
 import PresentationSection from "@/src/components/homeNoAuth/presentationSection";
 import styles from "@/styles/HomeNotAuth.module.scss";
+import CardsSection from "./../src/components/homeNoAuth/cardsSection/index";
 
 const HomeNotAuth = () => {
   return (
@@ -20,6 +21,7 @@ const HomeNotAuth = () => {
           <HeaderNoAuth />
           <PresentationSection />
         </div>
+        <CardsSection />
       </main>
     </>
   );
