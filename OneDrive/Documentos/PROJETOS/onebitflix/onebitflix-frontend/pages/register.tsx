@@ -147,6 +147,7 @@ const Register = function () {
                 placeholder="Seu melhor email"
                 required
                 className={styles.input}
+                style={{ textTransform: "lowercase" }}
               />
             </FormGroup>
             <FormGroup>
