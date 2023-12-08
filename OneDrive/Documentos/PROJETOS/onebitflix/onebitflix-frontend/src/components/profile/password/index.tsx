@@ -20,7 +20,7 @@ const PasswordForm = function () {
     });
   }, []);
 
-  const handlePasswordUpadate = async function (
+  const handlePasswordUpdate = async function (
     event: FormEvent<HTMLFormElement>
   ) {
     event.preventDefault();
@@ -69,7 +69,7 @@ const PasswordForm = function () {
 
   return (
     <>
-      <Form className={styles.form} onSubmit={handlePasswordUpadate}>
+      <Form className={styles.form} onSubmit={handlePasswordUpdate}>
         <div className={styles.inputNormalDiv}>
           <FormGroup>
             <Label className={styles.label} for="currentPassword">

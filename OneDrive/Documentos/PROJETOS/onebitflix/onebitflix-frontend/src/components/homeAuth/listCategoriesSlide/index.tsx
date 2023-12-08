@@ -3,8 +3,8 @@ import categoriesService, {
   CategoryType,
 } from "../../../services/categoriesService";
 import SlideComponent from "../../common/slideComponent";
-// import SwrSpinner from "../../../common/swrSpinner";
 import styles from "../../../../styles/slideCategory.module.scss";
+import SwrSpinner from "../../common/spinner";
 
 interface props {
   categoryId: number;
@@ -17,14 +17,7 @@ const ListCategoriesSlide = function ({ categoryId, categoryName }: props) {
   );
 
   if (error) return error;
-  // if (!data) return <SwrSpinner />;
-  if (!data) {
-    return (
-      <>
-        <p>ERRO!</p>
-      </>
-    );
-  }
+  if (!data) return <SwrSpinner />;
 
   return (
     <>

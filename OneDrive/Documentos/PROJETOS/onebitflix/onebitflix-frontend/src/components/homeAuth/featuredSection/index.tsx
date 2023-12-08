@@ -1,24 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "./styles.module.scss";
-
 import useSWR from "swr";
 import courseService, { CourseType } from "@/src/services/courseService";
 import HeaderAuth from "../../common/headerAuth";
 import { Button, Container } from "reactstrap";
 import Link from "next/link";
+import SwrSpinner from "../../common/spinner";
 
 const FeaturedSection = function () {
   const { data, error } = useSWR("/featured", courseService.getFeaturedCourses);
 
   if (error) return error;
-  // if (!data) return <SwrSpinner />;
-  if (!data) {
-    return (
-      <>
-        <p>ERRO!</p>
-      </>
-    );
-  }
+  if (!data) return <SwrSpinner />;
 
   return (
     <>
