@@ -46,7 +46,7 @@ const Search = function () {
           ) : (
             <div className={styles.searchContainer}>
               <p className={styles.noSearchText}>
-                Nenhum resultado encontrado! :(
+                Nenhum resultado encontrado! 😥
               </p>
             </div>
           )}
