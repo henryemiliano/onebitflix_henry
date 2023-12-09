@@ -14,10 +14,21 @@ const CoursePage = function () {
   const router = useRouter();
   const { id } = router.query;
 
+  const [loading, setLoading] = useState(true);
+
   const [course, setCourse] = useState<CourseType>();
 
   const [liked, setLiked] = useState(false);
   const [favorited, setFavorited] = useState(false);
+
+  useEffect(() => {
+    if (!sessionStorage.getItem("onebitflix-token")) {
+      router.push("/login");
+    } else {
+      setLoading(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const getCourse = async function () {
     if (typeof id !== "string") return;
@@ -60,6 +71,10 @@ const CoursePage = function () {
   };
 
   if (course === undefined) return SwrSpinner;
+
+  if (loading) {
+    return <SwrSpinner />;
+  }
 
   return (
     <>

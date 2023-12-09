@@ -7,6 +7,7 @@ import courseService, { CourseType } from "@/src/services/courseService";
 import { Container } from "reactstrap";
 import SearchCard from "@/src/components/searchCard";
 import Footer from "@/src/components/common/footer";
+import SwrSpinner from "@/src/components/common/spinner";
 
 const Search = function () {
   const router = useRouter();
@@ -25,6 +26,21 @@ const Search = function () {
     searchCourses();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchName]);
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!sessionStorage.getItem("onebitflix-token")) {
+      router.push("/login");
+    } else {
+      setLoading(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (loading) {
+    return <SwrSpinner />;
+  }
 
   return (
     <>
